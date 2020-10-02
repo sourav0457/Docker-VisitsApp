@@ -1,0 +1,9 @@
+# Creating two services: redis-server and node-app
+version: '3'
+services:
+    redis-server:
+        image: 'redis'
+    node-app:
+        build: .  # node-app is built using the Dockerfile present in the current directory
+        ports:
+            - "4001:8081"   # Port forwarding for node-app
